@@ -26,7 +26,7 @@ export default function RefsPage() {
 
   const rows = (data?.data?.response || data?.data || []).slice(0, 12).map((r: any) => ({
     label: r?.name || r?.referee?.name || 'Árbitro',
-    value: r?.overCards ?? r?.league || '-'
+   value: (r?.overCards ?? r?.league) || '-'
   }))
 
   return (
@@ -45,5 +45,6 @@ export default function RefsPage() {
     </main>
   )
 }
+
 
 
