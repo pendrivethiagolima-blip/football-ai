@@ -17,13 +17,15 @@ export default function LivePressureChart() {
   const [data, setData] = useState<number[]>([20, 35, 50, 40, 65, 80])
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setData((d) => {
-        const next = [...d, Math.min(100, Math.max(0, Math.round(d[d.length - 1] + (Math.random() * 20 - 10)))))]
-        return next.slice(-12)
-      })
-    }, 2000)
-    return () => clearInterval(id)
+  const id = setInterval(() => {
+    setData((d) => {
+      const nextValue = Math.min(100, Math.max(0, Math.round(d[d.length - 1] + (Math.random() * 20 - 10))));
+      const next = [...d, nextValue];
+      return next.slice(-12);
+    });
+  }, 2000);
+  return () => clearInterval(id);
+}, []);
   }, [])
 
   return (
@@ -47,5 +49,6 @@ export default function LivePressureChart() {
     />
   )
 }
+
 
 
