@@ -20,6 +20,7 @@ export default function LivePressureChart() {
   const id = setInterval(() => {
     setData((d) => {
       const nextValue = Math.min(100, Math.max(0, Math.round(d[d.length - 1] + (Math.random() * 20 - 10))));
+const next = [...d, nextValue];
       const next = [...d, nextValue];
       return next.slice(-12);
     });
@@ -49,6 +50,7 @@ export default function LivePressureChart() {
     />
   )
 }
+
 
 
 
