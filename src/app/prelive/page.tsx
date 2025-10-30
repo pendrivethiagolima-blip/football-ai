@@ -35,13 +35,14 @@ export default function PreLivePage() {
             <ProbabilityCard title="Probabilidade gol HT" value={goalHT} confidence={confidence} />
             <ProbabilityCard title="Probabilidade escanteios HT" value={cornersHT} confidence={confidence} />
             <ProbabilityCard title="Probabilidade cartões HT" value={cardsHT} confidence={confidence} />
-            <ProbabilityCard title="Under 1º tempo" value={underHT} confidence={confidence} />
+            <ProbabilityCard title="Under 1° Tempo" value={underHT} confidence={confidence} />
           </div>
-          <p className="text-xs text-slate-500">Destaque verde quando >= 80%.</p>
+          <p className="text-xs text-slate-500">Destaque verde quando {'>='} 80%.</p>
         </section>
       </div>
     </main>
   )
 }
+
 
 
